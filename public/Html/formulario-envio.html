@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Css/formulario.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     <!-- EmailJS SDK -->
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+     <!-- Inicializar EmailJS -->
+     <script type="text/javascript">
+         (function() {
+             // Verifica si emailjs está disponible
+             if (typeof emailjs !== 'undefined') {
+                 emailjs.init("0I-G9bBu_UeRjH0na");
+                 console.log("EmailJS inicializado correctamente");
+             } else {
+                 console.error("EmailJS no está disponible");
+             }
+         })();
+     </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="../img/logo-ambelocks.png" alt="Logo Ambelocks">
+            </a>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+            <li><a href="contactenos.html">Contáctenos</a></li>
+        </ul>
+        <!-- Botón de menú hamburguesa -->
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="cart-icon">
+            <a href="carrito.html" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- SECCION -->
+    <section class="seccion-pago">
+        <div class="contenedor-factura">
+            <h2>Resumen de tu Pedido</h2>
+            <div class="tabla-resumen">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resumen-productos">
+                        <!-- Los productos se cargarán dinámicamente con JavaScript -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" class="texto-total">Total a Pagar:</td>
+                            <td id="total-pedido" class="precio-total">0 COP</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    
+        <div class="contenedor-formulario">
+            <h2>Información de Envío y Pago</h2>
+            <form id="formulario-pago" class="formulario">
+                <div class="grupo-formulario">
+                    <label for="identificacion">Identificación:</label>
+                    <input type="text" id="identificacion" name="identificacion" required>
+                    <span id="identificacion-error" class="mensaje-error"></span>
+                </div>
+    
+                <div class="grupo-formulario">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    <span id="nombre-error" class="mensaje-error"></span>
+                </div>
+    
+                <div class="grupo-formulario">
+                    <label for="telefono">Número de Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                    <span id="telefono-error" class="mensaje-error"></span>
+                </div>
+    
+                <div class="grupo-formulario">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                    <span id="email-error" class="mensaje-error"></span>
+                </div>
+    
+                <div class="grupo-formulario">
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" name="direccion" required>
+                    <span id="direccion-error" class="mensaje-error"></span>
+                </div>
+    
+                <div class="grupo-formulario">
+                    <label for="codigo-postal">Código Postal:</label>
+                    <input type="text" id="codigo-postal" name="codigo-postal" required>
+                    <span id="codigo-postal-error" class="mensaje-error"></span>
+                </div>
+    
+                <div class="grupo-formulario">
+                    <label>Método de Pago:</label>
+                    <div class="opciones-pago">
+                        <div class="opcion-pago">
+                            <input type="radio" id="pse" name="metodo-pago" value="pse" required>
+                            <label for="pse">PSE</label>
+                        </div>
+                        <div class="opcion-pago">
+                            <input type="radio" id="tarjeta" name="metodo-pago" value="tarjeta">
+                            <label for="tarjeta">Tarjeta Crédito/Débito</label>
+                        </div>
+                    </div>
+                </div>
+    
+                <button type="submit" class="boton-pagar">
+                    <i class="fas fa-lock"></i> Pagar Ahora
+                </button>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-media">
+                <a href="https://www.facebook.com/share/1CfXCZ7Puh/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/Ambelick?t=h9D9KLmSCqDx4qcXuvIxSQ&s=08" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/angelperezserrato/profilecard/?igsh=YW9yemVsYjlmdDVk" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="contact-info">
+                <p>Contáctanos: <a href="mailto:contacto@ambelocks.com">contacto@ambelocks.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../Js/script.js"></script>
+    <script src="../Js/orderEmail.js"></script>
+</body>
+</html>

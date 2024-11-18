@@ -1,0 +1,298 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body 
+{
+    padding-top: 80px; /* Ajusta según la altura de tu navbar */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Ajuste del logo y centrar la barra de navegación en pantallas grandes */
+.logo img {
+    height: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.menu-toggle {
+    display: none; /* Ocultar en pantallas grandes */
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+    margin-right: 20px; /* Separación del borde */
+}
+
+/* Responsive: Mostrar el menú hamburguesa en pantallas pequeñas */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Ocultar el menú completo */
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: #fff;
+        width: 200px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        padding: 10px;
+        z-index: 1001; /* Encima de otros elementos */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links.show {
+        display: flex; /* Mostrar el menú al activar */
+    }
+
+    .menu-toggle {
+        display: block; /* Mostrar el botón de menú en pantallas pequeñas */
+    }
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-size: 20px;
+}
+
+.nav-links a:hover {
+    color: #007bff; /* Ajusta el color según tu marca */
+}
+
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+    color: #333;
+    font-size: 24px;
+    padding-right: 60px;
+}
+
+.cart-icon i {
+    font-size: 28px;
+}
+
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: 47px;
+    background-color: #ff0000;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Seccion*/
+/* Estilos para la sección de pago */
+.seccion-pago {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+/* Estilos para el contenedor de la factura */
+.contenedor-factura {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 2rem;
+}
+
+.tabla-resumen {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tabla-resumen table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.tabla-resumen th,
+.tabla-resumen td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabla-resumen th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.texto-total {
+    text-align: right;
+    font-weight: bold;
+}
+
+.precio-total {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Estilos para el contenedor del formulario */
+.contenedor-formulario {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+.formulario {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.grupo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.grupo-formulario label {
+    font-weight: 500;
+    color: #333;
+}
+
+.grupo-formulario input[type="text"],
+.grupo-formulario input[type="tel"],
+.grupo-formulario input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.grupo-formulario input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+.mensaje-error {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.opciones-pago {
+    display: flex;
+    gap: 2rem;
+    margin-top: 0.5rem;
+}
+
+.opcion-pago {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.boton-pagar {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.boton-pagar:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .formulario {
+        grid-template-columns: 1fr;
+    }
+
+    .opciones-pago {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #007bff; /* Ajusta el color según tu marca */
+}
+
+.contact-info p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}

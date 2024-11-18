@@ -1,0 +1,222 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body 
+{
+    padding-top: 80px; /* Ajusta según la altura de tu navbar */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Ajuste del logo y centrar la barra de navegación en pantallas grandes */
+.logo img {
+    height: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.menu-toggle {
+    display: none; /* Ocultar en pantallas grandes */
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+    margin-right: 20px; /* Separación del borde */
+}
+
+/* Responsive: Mostrar el menú hamburguesa en pantallas pequeñas */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Ocultar el menú completo */
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: #fff;
+        width: 200px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        padding: 10px;
+        z-index: 1001; /* Encima de otros elementos */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links.show {
+        display: flex; /* Mostrar el menú al activar */
+    }
+
+    .menu-toggle {
+        display: block; /* Mostrar el botón de menú en pantallas pequeñas */
+    }
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-size: 20px;
+}
+
+.nav-links a:hover {
+    color: #007bff; /* Ajusta el color según tu marca */
+}
+
+/* Video de fondo */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el video para cubrir toda la sección */
+    z-index: 0; /* Asegura que el video esté detrás del contenido */
+}
+
+/* Sección de llamada a la acción */
+.cta-section {
+    position: relative; /* Permite el uso de posicionamiento absoluto dentro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Oculta cualquier contenido fuera de los límites */
+    text-align: center;
+    color: #fff;
+}
+
+/* Superposición de fondo para mejorar la legibilidad */
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Superposición semitransparente */
+    z-index: 1; /* Capa entre el video y el contenido */
+}
+
+/* Contenido de la sección */
+.cta-content {
+    position: relative;
+    z-index: 2; /* Asegura que el contenido esté por encima de todo */
+}
+
+.cta-content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+    color: #333;
+    font-size: 24px;
+    padding-right: 60px;
+}
+
+.cart-icon i {
+    font-size: 28px;
+}
+
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: 47px;
+    background-color: #ff0000;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #007bff; /* Ajusta el color según tu marca */
+}
+
+.contact-info p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
